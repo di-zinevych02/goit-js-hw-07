@@ -9,6 +9,7 @@ const inputInfo = document.querySelector('input');
 const box = document.querySelector('#boxes');
 
 function createBoxes(amount) {
+  deleteBoxes(); // Очищаємо попередні блоки перед створенням нових
   const fragment = document.createDocumentFragment();
   for (let i = 0; i < amount; i++) {
     const boxCreate = document.createElement('div'); // Створюємо новий div
@@ -31,6 +32,7 @@ btnCreate.addEventListener('click', () => {
   if (amount >= 1 && amount <= 100) {
     createBoxes(amount);
   }
-  inputInfo.value = '';
+  inputInfo.value = ''; // Очищаємо поле вводу
 });
+// Обробник для кнопки видалення
 btnDestroy.addEventListener('click', deleteBoxes);
